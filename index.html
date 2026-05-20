@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alley Valley — If it's on your mind, it matters.</title>
+<meta name="description" content="Alley Valley: behavioral health care and the NYS SCN Food Program. If it's on your mind, it matters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f3a34;
+    --sage:#3e6b5e;
+    --sage-soft:#6f9c8d;
+    --cream:#f6f2e9;
+    --cream-deep:#ece5d6;
+    --gold:#c9a24b;
+    --line:#d8d0bf;
+    --white:#ffffff;
+    --shadow:0 18px 50px -20px rgba(31,58,52,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Mulish",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:"Fraunces",serif;font-size:1.45rem;font-weight:600;color:var(--sage);text-decoration:none;letter-spacing:-.02em}
+  .brand span{display:block;font-family:"Mulish";font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-soft);margin-top:-2px}
+  nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+  nav a{text-decoration:none;font-size:.92rem;font-weight:600;color:var(--ink);opacity:.8;transition:opacity .2s}
+  nav a:hover{opacity:1}
+  .nav-cta{background:var(--sage);color:var(--cream)!important;padding:10px 20px;border-radius:40px;opacity:1!important}
+  .menu-btn{display:none;background:none;border:0;font-size:1.5rem;color:var(--sage);cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;padding:96px 0 80px;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:
+     radial-gradient(60% 70% at 85% 15%, rgba(111,156,141,.28), transparent 60%),
+     radial-gradient(50% 60% at 10% 90%, rgba(201,162,75,.16), transparent 60%);pointer-events:none}
+  .hero .wrap{position:relative}
+  .eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);max-width:14ch}
+  .hero h1 em{font-style:italic;color:var(--sage)}
+  .hero p{font-size:1.18rem;max-width:46ch;margin:26px 0 34px;color:#41544d}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;padding:14px 28px;border-radius:44px;transition:transform .2s, box-shadow .2s}
+  .btn-primary{background:var(--sage);color:var(--cream);box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--sage);border:1.5px solid var(--sage-soft)}
+  .btn-ghost:hover{background:var(--white)}
+
+  /* Pledge strip */
+  .pledge{background:var(--ink);color:var(--cream);padding:64px 0}
+  .pledge-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .pledge h2{font-size:2rem;color:#fff;margin-bottom:14px}
+  .pledge p{opacity:.82;max-width:42ch}
+  .nots{display:flex;flex-direction:column;gap:10px}
+  .nots span{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--gold);font-style:italic}
+  .nots small{display:block;font-family:"Mulish";font-size:.85rem;color:var(--cream);opacity:.7;font-style:normal;letter-spacing:.04em}
+
+  /* SCN program */
+  .program{padding:90px 0}
+  .program-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:54px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .program-card:before{content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(111,156,141,.25),transparent 70%)}
+  .tag{display:inline-block;background:var(--cream-deep);color:var(--sage);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:30px;margin-bottom:20px}
+  .program h2{font-size:2.4rem;max-width:18ch;margin-bottom:18px}
+  .program .lead{font-size:1.1rem;color:#41544d;max-width:52ch;margin-bottom:28px}
+  .qual{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 8px}
+  .qual div{background:var(--cream);border-radius:16px;padding:20px}
+  .qual strong{display:block;font-family:"Fraunces",serif;font-size:1.05rem;color:var(--sage);margin-bottom:4px}
+  .qual small{color:#5a6b65;font-size:.88rem}
+
+  /* SMS opt-in */
+  .signup{background:linear-gradient(160deg,#2e524a,#1f3a34);color:var(--cream);padding:88px 0}
+  .signup-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+  .signup h2{color:#fff;font-size:2.3rem;margin-bottom:16px;max-width:16ch}
+  .signup .sub{opacity:.85;max-width:44ch;margin-bottom:22px}
+  .signup ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px}
+  .signup li{display:flex;gap:12px;font-size:.96rem;opacity:.9}
+  .signup li b{color:var(--gold)}
+  .form-card{background:var(--cream);color:var(--ink);border-radius:22px;padding:34px;box-shadow:0 30px 60px -25px rgba(0,0,0,.5)}
+  .form-card h3{font-size:1.4rem;margin-bottom:6px}
+  .form-card .fh{font-size:.9rem;color:#5a6b65;margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.03em;margin-bottom:6px;color:var(--sage)}
+  .field input{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:1rem;background:#fff;color:var(--ink)}
+  .field input:focus{outline:none;border-color:var(--sage-soft);box-shadow:0 0 0 3px rgba(111,156,141,.18)}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:18px 0;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px}
+  .consent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--sage)}
+  .consent label{font-size:.8rem;line-height:1.5;color:#43544e}
+  .consent label a{color:var(--sage);font-weight:700}
+  .submit{width:100%;background:var(--sage);color:var(--cream);border:0;padding:15px;border-radius:44px;font-family:inherit;font-weight:700;font-size:1rem;cursor:pointer;transition:transform .2s}
+  .submit:hover{transform:translateY(-2px)}
+  .finep{font-size:.72rem;color:#6b7a74;margin-top:14px;line-height:1.5}
+
+  /* Footer */
+  footer{background:var(--ink);color:var(--cream);padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer h4{font-family:"Mulish";font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:700}
+  footer .fbrand{font-family:"Fraunces",serif;font-size:1.5rem;color:#fff;margin-bottom:10px}
+  footer p,footer a{opacity:.82;font-size:.92rem;text-decoration:none;color:var(--cream);line-height:1.9}
+  footer a:hover{opacity:1}
+  .foot-links{display:flex;flex-direction:column}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:.82rem;opacity:.6}
+
+  @media(max-width:860px){
+    nav ul{display:none}
+    .menu-btn{display:block}
+    .pledge-grid,.signup-grid,.foot-grid{grid-template-columns:1fr;gap:32px}
+    .qual{grid-template-columns:1fr}
+    .program-card{padding:32px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Alley Valley<span>SCN Food Program</span></a>
+    <nav>
+      <ul>
+        <li><a href="#difference">About</a></li>
+        <li><a href="#program">SCN Food Program</a></li>
+        <li><a href="#signup">Get Text Updates</a></li>
+        <li><a href="tel:8453510300">845-351-0300</a></li>
+        <li><a href="#signup" class="nav-cta">Check Eligibility</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Behavioral Health · NYS SCN Program</span>
+    <h1>If it's on your mind, <em>it matters.</em></h1>
+    <p>Alley Valley provides exceptional, person-centered care across the age spectrum — and connects eligible New Yorkers to the NYS SCN Food Program for nutritious, fully prepared meals.</p>
+    <div class="btns">
+      <a href="#signup" class="btn btn-primary">Check Your Eligibility</a>
+      <a href="#difference" class="btn btn-ghost">Our Difference</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLEDGE -->
+<section class="pledge" id="difference">
+  <div class="wrap pledge-grid">
+    <div>
+      <h2>The Alley Valley difference</h2>
+      <p>As a Behavioral Health Clinic certified by the New York State Office of Mental Health, we hold ourselves to the highest clinical standards of care. You'll be supported by experienced, licensed Mental Health Professionals, including in-house psychiatrists.</p>
+    </div>
+    <div class="nots">
+      <span>No shame.<small>You belong here.</small></span>
+      <span>No stigma.<small>Care without judgment.</small></span>
+      <span>No silent struggles.<small>A safe place to soar.</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- SCN PROGRAM -->
+<section class="program" id="program">
+  <div class="wrap">
+    <div class="program-card">
+      <span class="tag">NYS SCN Food Program</span>
+      <h2>Nutritious meals, delivered to your door.</h2>
+      <p class="lead">The SCN (Social Care Network) Food Program provides fully prepared, nutritious meals delivered right to your home for eligible New Yorkers — at no cost to those who qualify.</p>
+      <div class="qual">
+        <div><strong>Pregnant</strong><small>Expecting members may qualify.</small></div>
+        <div><strong>Postpartum</strong><small>Support after delivery.</small></div>
+        <div><strong>Medicaid members</strong><small>Eligible members may qualify.</small></div>
+      </div>
+      <p class="lead" style="margin-top:24px">Not sure if you qualify? We'll gladly check for you — reach out and our team will walk you through it.</p>
+      <a href="#signup" class="btn btn-primary">See if you qualify</a>
+    </div>
+  </div>
+</section>
+
+<!-- SMS OPT-IN -->
+<section class="signup" id="signup">
+  <div class="wrap signup-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Text Message Updates</span>
+      <h2>Get SCN Food Program updates by text.</h2>
+      <p class="sub">Sign up to receive eligibility help and program updates from Alley Valley by text message. Joining is optional and is never a condition of receiving any care or service.</p>
+      <ul>
+        <li><b>›</b> Eligibility check-ins &amp; program reminders</li>
+        <li><b>›</b> Reply <b>STOP</b> any time to unsubscribe</li>
+        <li><b>›</b> Reply <b>HELP</b> for help, or call <b>845-351-0300</b></li>
+        <li><b>›</b> Msg frequency varies · Msg &amp; data rates may apply</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h3>Sign up for text updates</h3>
+      <p class="fh">Complete the form to opt in to SMS from Alley Valley.</p>
+
+      <form onsubmit="event.preventDefault();this.querySelector('.submit').textContent='✓ Thank you — you\'re signed up';">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Mobile phone number</label>
+          <input id="phone" type="tel" placeholder="(845) 000-0000" required>
+        </div>
+
+        <div class="consent">
+          <input id="optin" type="checkbox" required>
+          <label for="optin">
+            By checking this box and submitting this form, I agree to receive recurring marketing and informational
+            text messages (e.g. SCN Food Program updates, eligibility help, and reminders) from <b>Alley Valley</b>
+            at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase
+            or service. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to unsubscribe or HELP for help.
+            See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="submit">Sign Up for Text Updates</button>
+        <p class="finep">By signing up you confirm the mobile number is yours. Your mobile opt-in information will not be
+          shared with third parties for marketing purposes. To stop at any time, reply STOP.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fbrand">Alley Valley</div>
+        <p>To provide exceptional, comprehensive, person-centered care to clients across the age spectrum — children, teens, and adults.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="foot-links">
+          <a href="tel:8453510300">845-351-0300</a>
+          <a href="mailto:info@alleyvalley.com">info@alleyvalley.com</a>
+          <span>290 Route 59<br>Spring Valley, NY 10977</span>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="foot-links">
+          <a href="#program">SCN Food Program</a>
+          <a href="#signup">Get Text Updates</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Alley Valley. All rights reserved.</span>
+      <span>If it's on your mind, it matters.</span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
